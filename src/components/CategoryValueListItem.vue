@@ -1,8 +1,8 @@
 <template>
-  <li class="item" :class="{inactive}">
+  <li class="item" :class="{ inactive }">
     <!-- <a :href="link">{{ value }}</a> -->
     <!-- <router-link :to="{ name: 'question', params: { category, value } }">{{ value }}</router-link> -->
-    <a @click="click">{{value}}</a>
+    <a @click="click">{{ value }}</a>
   </li>
 </template>
 
@@ -27,21 +27,23 @@ export default Vue.extend({
   methods: {
     click(event) {
       event.preventDefault();
-      if(event.shiftKey) {
-        this.$store.dispatch("revertQuestionState", {category: this.category, value: this.value});
+      if (event.shiftKey) {
+        this.$store.dispatch("revertQuestionState", { category: this.category, value: this.value });
         return;
       }
-      this.$store.dispatch("visitQuestion", {category: this.category, value: this.value});
-      this.$router.push({ name: 'question', params: {category: this.category, value: this.value} });
-    }
+      this.$store.dispatch("visitQuestion", { category: this.category, value: this.value });
+      this.$router.push({ name: "question", params: { category: this.category, value: this.value } });
+    },
   },
   computed: {
     link() {
       return `category/${this.category}/value/${this.value}`;
     },
     inactive() {
-      return this.$store.state.questions.find(q => this.category === q.category && this.value === q.value).active === false;
-    }
+      return (
+        this.$store.state.questions.find(q => this.category === q.category && this.value === q.value).active === false
+      );
+    },
   },
 });
 </script>
@@ -49,8 +51,8 @@ export default Vue.extend({
 <style>
 .item > * {
   display: block;
-  padding: 10px;
-  margin: 3px 0;
+  padding: 20px;
+  margin: 10px 0;
   background-color: var(--background-accent);
   text-align: center;
   -moz-user-select: -moz-none;

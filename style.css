@@ -1,0 +1,26 @@
+body {
+  font-family: "Open Sans";
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+h1 {
+  /* page-break-before: always; */
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.container {
+  page-break-after: always;
+}
+
+.solution {
+  color: green;
+  font-weight: bold;
+}

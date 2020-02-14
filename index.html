@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Liste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <p>
+            <div class="container" v-for="(questions, category) in questionsPerCategory" :key="category">
+              <h1>{{ category }}</h1>
+                  <ul>
+                    <li v-for="question in questions" :key="questions.category + question.value">
+                      <h2>{{ question.isJoker ? "Joker" : question.question }}</h2>
+                      <ol type="A" v-if="question.answers">
+                        <li
+                          v-for="(answer, index) in question.answers"
+                          :class="{solution: index === question.solution}"
+                          :key="answer"
+                        >
+                          {{ answer }}
+                        </li>
+                      </ol>
+                      <p v-else class="solution">{{ question.solution }}</p>
+                    </li>
+                  </ul>
+              </p>
+            </div>
+        </p>
+    </div>
+
+    <script type="module">
+      import questions from "./src/questions.js";
+      new Vue({
+        el: "#app",
+        computed: {
+          questionsPerCategory() {
+            return questions.reduce((result, question) => {
+              if (!(question.category in result)) {
+                result[question.category] = [];
+              }
+              result[question.category].push(question);
+              return result;
+            }, {});
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

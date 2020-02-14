@@ -32,10 +32,10 @@ export default {
         this.$store.dispatch("enterPress");
         return event;
       }
-      if (event.keyCode === 8 && event.target.nodeName === "BODY") {
-        this.$store.dispatch("backspacePress");
-        return event;
-      }
+      // if (event.keyCode === 8 && event.target.nodeName === "BODY") {
+      //   this.$store.dispatch("backspacePress");
+      //   return event;
+      // }
       if (event.keyCode === 32 && event.target.nodeName === "BODY") {
         this.$store.dispatch("spacePress");
         return event;
@@ -55,6 +55,10 @@ export default {
   --background: #000;
   --background-accent: rgb(83, 83, 83);
 }
+body {
+  background: var(--background);
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

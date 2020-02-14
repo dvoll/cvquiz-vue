@@ -50,12 +50,16 @@ export default Vue.extend({
   padding: 20px 5px;
   flex-grow: 1;
   flex-basis: 0;
-  /* display: flex;
+  align-self: stretch;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center; */
+  align-items: center;
+  overflow: hidden;
 }
+
 .question-page__footer {
-  height: 300px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 </style>

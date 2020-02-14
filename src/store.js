@@ -4,6 +4,17 @@ import questions from "./questions";
 
 Vue.use(Vuex);
 
+export const questionProgressStates = {
+  INITIAL: 'inital',
+  RUNNING: 'running',
+  PAUSED: 'paused',
+  FINISHED: 'finished',
+}
+
+export const questionTypes = {
+  IMAGE_REVEAL: 'image-reveal',
+}
+
 export default new Vuex.Store({
   state: {
     // questions: [
@@ -29,10 +40,15 @@ export default new Vuex.Store({
     isQuestionPage: false,
     showQuestion: false,
     showSolution: false,
+    questionType: null,
+    questionProgressState: 'initial',
   },
   mutations: {
     setActiveBuzzer(state, { index }) {
       return (state.activeBuzzer = index);
+    },
+    setQuestiontype(state, { questionType }) {
+      return (state.questionType = questionType);
     },
     unsetBuzzer(state) {
       state.activeBuzzer = -1;
@@ -80,6 +96,18 @@ export default new Vuex.Store({
         return q;
       });
     },
+    resetQuestionProgressState(state) {
+      state.questionProgressState = questionProgressStates.INITIAL;
+    },
+    startQuestionProgressState(state) {
+      state.questionProgressState = questionProgressStates.RUNNING;
+    },
+    stopQuestionProgressState(state) {
+      state.questionProgressState = questionProgressStates.PAUSED;
+    },
+    finishQuestionProgressState(state) {
+      state.questionProgressState = questionProgressStates.FINISHED;
+    },
   },
   actions: {
     buzzerPress({ commit, dispatch, state }, index) {
@@ -104,8 +132,11 @@ export default new Vuex.Store({
         }
       }, 1000);
     },
-    enterQuestionPage({ commit }) {
+    enterQuestionPage({ commit }, {questionType}) {
       commit("setQuestionPage");
+      if (questionType) {
+        commit({ type: 'setQuestiontype', questionType });
+      }
       // commit('enableBuzzers');
     },
     leaveQuestionPage({ commit, dispatch }) {
@@ -113,18 +144,31 @@ export default new Vuex.Store({
       commit("disableBuzzers");
       commit({ type: "setQuestionState", show: false });
       commit({ type: "setSolutionState", show: false });
+      commit({ type: 'setQuestiontype', questionType: null });
       dispatch("startTimer", true);
+      commit("resetQuestionProgressState");
     },
     enterPress({ state, commit }) {
-      if (state.isQuestionPage && state.showQuestion) {
+      if (state.isQuestionPage && state.showQuestion && state.questionType === questionTypes.IMAGE_REVEAL && state.questionProgressState !== questionProgressStates.FINISHED) {
+        commit('finishQuestionProgressState');
+      } else if (state.isQuestionPage && state.showQuestion) {
         commit({ type: "setSolutionState", show: true });
       }
     },
     spacePress({ state, commit }) {
-      if (state.isQuestionPage) {
-        commit({ type: "setQuestionState", show: true });
-        commit("enableBuzzers");
+      if (!state.isQuestionPage ) {
+        return;
       }
+      if (!state.showQuestion) {
+        commit({ type: "setQuestionState", show: true });
+      } else if (state.questionType === questionTypes.IMAGE_REVEAL) {
+        if (state.questionProgressState === questionProgressStates.RUNNING) {
+          commit("stopQuestionProgressState");
+        } else {
+          commit("startQuestionProgressState");
+        }
+      }
+      commit("enableBuzzers");
     },
     visitQuestion({ commit }, { category, value }) {
       commit({
@@ -137,6 +181,9 @@ export default new Vuex.Store({
         type: "setQuestionActive",
         payload: { category, value },
       });
+    },
+    finishedImageReveal({ commit }) {
+      commit('finishQuestionProgressState');
     },
   },
   getters: {

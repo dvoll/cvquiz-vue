@@ -2,12 +2,13 @@
   <div class="container-parent" :class="{ isActive: barIsActive }" style>
     <div class="container items-end" style>
       <Buzzer :active="activeBuzzer == 1" @click="setActive(1)">1</Buzzer>
-      <Buzzer :active="activeBuzzer == 2" @click="setActive(2)">2</Buzzer>
+      <!-- <Buzzer :active="activeBuzzer == 2" @click="setActive(2)">2</Buzzer> -->
     </div>
-    <span class="timer" :class="{ inactive: time < 0 }">{{ time }}</span>
+    <!-- <span class="timer" :class="{ inactive: time < 0 }">{{ time }}</span> -->
     <div class="container" style>
-      <Buzzer :active="activeBuzzer == 3" @click="setActive(3)">3</Buzzer>
-      <Buzzer :active="activeBuzzer == 4" @click="setActive(4)">4</Buzzer>
+      <Buzzer :active="activeBuzzer == 2" @click="setActive(2)">2</Buzzer>
+      <!-- <Buzzer :active="activeBuzzer == 3" @click="setActive(3)">3</Buzzer> -->
+      <!-- <Buzzer :active="activeBuzzer == 4" @click="setActive(4)">4</Buzzer> -->
     </div>
   </div>
 </template>
