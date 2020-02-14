@@ -1,0 +1,219 @@
+[
+    {
+        "category": "Bibel",
+        "value": 10,
+        "question": "Wie heißt die Mutter von Jesus?",
+        "solution": "Maria"
+    },
+    {
+        "category": "Bibel",
+        "value": 15,
+        "question": "Wie viele Jünger hatte Jesus?",
+        "solution": "12"
+    },
+    {
+        "category": "Bibel",
+        "value": 20,
+        "question": "Wer wurde von einem Fisch verschluckt, aber nach 3 Tagen & 3 Nächten wieder ausgespuckt?",
+        "solution": "Jona"
+    },
+    {
+        "category": "Bibel",
+        "value": 30,
+        "question": "Wie heißt der Zöllner, der auf einem Baum auf Jesus wartete?",
+        "solution": "Zahäus"
+    },
+    {
+        "category": "Bibel",
+        "value": 40,
+        "isJoker": true
+    },
+    {
+        "category": "Bibel",
+        "value": 50,
+        "question": "Schätzfrage: Wie viele Bücher hat die Bibel?",
+        "solution": "73"
+    },
+    {
+        "category": "Bibel",
+        "value": 60,
+        "question": "Wie heißen die 4 Evangelien?",
+        "solution": "Markus, Matthäus, Lukas und Johannes"
+    },
+
+
+
+
+
+    {
+        "category": "Wer ist das?",
+        "value": 10,
+        "type": "image-reveal",
+        "imageUrl": "/images/reus.jpg",
+        "solution": "Marco Reus"
+    },
+    {
+        "category": "Wer ist das?",
+        "value": 20,
+        "type": "image-reveal",
+        "imageUrl": "/images/sonic.jpg",
+        "solution": "Sonic (the Hedgehog)"
+    },
+    {
+        "category": "Wer ist das?",
+        "value": 30,
+        "type": "image-reveal",
+        "imageUrl": "/images/wickie.jpg",
+        "solution": "Wickie"
+    },
+    {
+        "category": "Wer ist das?",
+        "value": 40,
+        "type": "image-reveal",
+        "imageUrl": "/images/thunberg.jpg",
+        "solution": "Greta Thunberg"
+    },
+    {
+        "category": "Wer ist das?",
+        "value": 50,
+        "type": "image-reveal",
+        "imageUrl": "/images/lena.jpg",
+        "solution": "Lena Meyer-Landrut"
+    },
+    {
+        "category": "Wer ist das?",
+        "value": 60,
+        "type": "image-reveal",
+        "imageUrl": "/images/forster.jpg",
+        "solution": "Mark Forster"
+    },
+
+
+
+
+
+    {
+        "category": "Was ist das?",
+        "value": 10,
+        "type": "image-reveal",
+        "imageUrl": "/images/rauchfang.jpg",
+        "solution": "Rauchfang"
+    },
+    {
+        "category": "Was ist das?",
+        "value": 20,
+        "type": "image-reveal",
+        "imageUrl": "/images/baseball.jpg",
+        "solution": "Baseball"
+    },
+    {
+        "category": "Was ist das?",
+        "value": 30,
+        "type": "image-reveal",
+        "imageUrl": "/images/youtube.jpg",
+        "solution": "YouTube"
+    },
+    {
+        "category": "Was ist das?",
+        "value": 40,
+        "type": "image-reveal",
+        "imageUrl": "/images/diskette.jpg",
+        "solution": "Diskette"
+    },
+    {
+        "category": "Was ist das?",
+        "value": 50,
+        "type": "image-reveal",
+        "imageUrl": "/images/boomerang.jpg",
+        "solution": "Boomerang"
+    },
+    {
+        "category": "Was ist das?",
+        "value": 60,
+        "type": "image-reveal",
+        "imageUrl": "/images/telefonbuch.jpg",
+        "solution": "Telefonbuch"
+    },
+
+
+
+
+
+    {
+        "category": "Aktion",
+        "value": 10,
+        "question": "Sucht (und bringt uns) drei Kugelschreiber!",
+        "solution": "🖊🖊🖊"
+    },
+    {
+        "category": "Aktion",
+        "value": 20,
+        "question": "Welche Hausnummer hat der Rauchfang",
+        "solution": "15"
+    },
+    {
+        "category": "Aktion",
+        "value": 30,
+        "question": "Mathe",
+        "solution": "♾"
+    },
+    {
+        "category": "Aktion",
+        "value": 40,
+        "question": "Bringt uns einen Locher!",
+        "solution": "✈"
+    },
+    {
+        "category": "Aktion",
+        "value": 50,
+        "question": "Wann putzen die Gruppen als nächstes den Rauchfang?",
+        "solution": "Zettel in der Küche"
+    },
+    {
+        "category": "Aktion",
+        "value": 60,
+        "question": "",
+        "solution": "🦓🦒"
+    },
+
+
+
+
+
+    {
+        "category": "Allgemein",
+        "value": 10,
+        "question": "Wann wurde der Rauchfang renoviert?",
+        "answers": ["2004", "2008", "2012", "2016"],
+        "solution": 0
+    },
+    {
+        "category": "Allgemein",
+        "value": 20,
+        "question": "Wer ist als letztes Fußball-Weltmeister geworden?",
+        "solution": "Frankreich"
+    },
+    {
+        "category": "Allgemein",
+        "value": 30,
+        "question": "Was sind die wichtigsten Markierungen/Linien auf einem Handballfeld?",
+        "solution": "Außenlinien, 6/9/7-Meter-Linie, Mittellinie"
+    },
+    {
+        "category": "Allgemein",
+        "value": 40,
+        "question": "Wie nennt man den \"Ball\" beim Hockey?",
+        "solution": "Puck"
+    },
+    {
+        "category": "Allgemein",
+        "value": 50,
+        "question": "Bei welchem Sport ist der Ball nicht rund?",
+        "solution": "Football"
+    },
+    {
+        "category": "Allgemein",
+        "value": 60,
+        "isJoker": true
+    }
+]

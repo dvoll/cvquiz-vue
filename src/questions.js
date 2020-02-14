@@ -289,7 +289,7 @@ const personRevealQuestions = [
         category: 'Personen',
         value: 40,
         type: 'image-reveal',
-        imageUrl: '/images/logo.png',
+        imageUrl: '/images/thunberg.jpg',
         solution: 'Greta',
         // question: "Schreibe 5 Ballsportarten auf",
         // solution: "",
